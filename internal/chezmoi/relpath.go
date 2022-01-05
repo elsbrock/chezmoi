@@ -92,6 +92,8 @@ func (p RelPath) Less(other RelPath) bool {
 
 // MarshalJSON implements encoding.TextMarshaler.MarshalJSON.
 func (p RelPath) MarshalJSON() ([]byte, error) {
+	// FIXME remove the following when https://github.com/breml/errchkjson/issues/5 is fixed
+	//nolint:errchkjson
 	return json.Marshal(p.relPath)
 }
 
